@@ -19,5 +19,15 @@ public class Principal {
         System.out.println("Hola " + nombre);
         
         // BREAK 15'
+        
+        // Ejercicio:
+        
+        /*
+            Crear una clase que permita guardar los siguientes datos:
+            rut, digito verificador, nombre, apellido, correo, dirección
+            año ingreso, sueldo, si es chileno.
+        
+        */
+        
     }
 }
