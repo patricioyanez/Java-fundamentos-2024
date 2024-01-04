@@ -1,6 +1,8 @@
 
 package Principal;
 
+import java.util.Scanner;
+
 
 public class Principal2 {
     public static void main(String[] args) {
@@ -21,5 +23,35 @@ public class Principal2 {
         System.out.println("Pizza 1: " + pizza1);
         System.out.println("Pizza 2: " + pizza2);
         System.out.println("Pizza 3: " + pizza3);
+        
+        
+        // uso de mutadores y accesadores (getter and setter)
+        pizza1.setNombre("Vegetariana");
+        pizza1.setMasa("a la piedra");
+        pizza1.setPrecio(7000);
+        System.out.println("**** pizza 1 con datos agregados *****");
+        System.out.println("Pizza 1: " + pizza1);
+        
+        System.out.println("\n\nEl nombre de la pizza 3 es: " + 
+                                pizza3.getNombre() );
+        
+        // solicitar datos al usuario y agregarlo al objeto
+        Scanner leer = new Scanner(System.in);
+        
+        System.out.print("\n\n**** Ingrese nombre de pizza 2: ");
+        String nombrePizza = leer.next();
+        pizza2.setNombre(nombrePizza);
+        
+        System.out.print("**** Ingrese tamaño de pizza 2: ");
+        String masa = leer.next();
+        pizza2.setMasa(masa);      
+        
+        System.out.println("Datos pizza 2:" + pizza2);
+        /*
+        Ejercicio:
+        Crear 2 personas y solicitar los datos al usuario para 
+        completar ambos objetos
+        
+        */
     }
 }
