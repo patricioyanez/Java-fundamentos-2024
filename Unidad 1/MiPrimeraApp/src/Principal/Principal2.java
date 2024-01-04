@@ -50,7 +50,8 @@ public class Principal2 {
         /*
         Ejercicio:
         Crear 2 personas y solicitar los datos al usuario para 
-        completar ambos objetos
+        completar ambos objetos y mostrar todos los datos en la 
+        consola
         
         */
     }
