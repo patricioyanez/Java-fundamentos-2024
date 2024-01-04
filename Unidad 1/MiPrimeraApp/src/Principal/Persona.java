@@ -106,6 +106,11 @@ public class Persona {
     public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "rut=" + rut + ", dv=" + dv + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", direccion=" + direccion + ", anioIngreso=" + anioIngreso + ", sueldo=" + sueldo + ", esChileno=" + esChileno + '}';
+    }
     
     
 }
