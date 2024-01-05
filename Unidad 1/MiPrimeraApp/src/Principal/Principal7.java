@@ -16,6 +16,11 @@ public class Principal7 {
         System.out.println("Minúscula : " + nombre.toLowerCase());
         
         String rut = "20100300-K";
+        String numeroRut = rut.substring(0, 8);
+        System.out.println("numero rut: " + numeroRut);
+        String dv = rut.substring(9);
+        System.out.println("digito verificador: " + dv);
+        System.out.println("rut " + rut);
         
     }
 }
