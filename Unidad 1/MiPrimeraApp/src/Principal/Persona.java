@@ -114,7 +114,7 @@ public class Persona {
     
     public String imprimirDatos()
     {
-        return "Rut         : " + rut + "-" + dv + 
+        return "Rut          : " + rut + "-" + dv + 
                 "\nNombre       : " + nombre + 
                 "\nApellido     : " + apellido + 
                 "\nCorreo       : " + correo + 

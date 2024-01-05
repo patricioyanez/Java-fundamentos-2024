@@ -50,5 +50,13 @@ public class Principal3 {
         System.out.println("Rut         : " + persona1.getRut() +"-" + persona1.getDv() );
         System.out.println("Nombre      : " + persona1.getNombre());
         System.out.println("Apellido    : " + persona1.getApellido());
+        
+        
+        System.out.println("Rut         : " + persona2.getRut() +"-" + persona1.getDv() );
+        System.out.println("Nombre      : " + persona2.getNombre());
+        System.out.println("Apellido    : " + persona2.getApellido());
+        
+        System.out.println("*** Datos persona usando método **** ");
+        System.out.println(persona1.imprimirDatos());
     }
 }
