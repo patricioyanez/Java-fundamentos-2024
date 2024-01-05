@@ -58,5 +58,6 @@ public class Principal3 {
         
         System.out.println("*** Datos persona usando método **** ");
         System.out.println(persona1.imprimirDatos());
+        
     }
 }
