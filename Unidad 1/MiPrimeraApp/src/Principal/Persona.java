@@ -3,7 +3,7 @@ package Principal;
 
 public class Persona {
     private int rut;
-    private char dv;
+    private String dv;
     private String nombre;
     private String apellido;
     private String correo;
@@ -14,7 +14,7 @@ public class Persona {
     
     public Persona() {
         this.rut = 0;
-        this.dv = ' ';
+        this.dv = "";
         this.nombre = "";
         this.apellido = "";
         this.correo = "";
@@ -23,7 +23,7 @@ public class Persona {
         this.sueldo = 0;
         this.esChileno = false;
     }
-    public Persona(int rut, char dv, String nombre, String apellido, String correo, String direccion, int anioIngreso, int sueldo, boolean esChileno) {
+    public Persona(int rut, String dv, String nombre, String apellido, String correo, String direccion, int anioIngreso, int sueldo, boolean esChileno) {
         this.rut = rut;
         this.dv = dv;
         this.nombre = nombre;
@@ -51,11 +51,11 @@ public class Persona {
         this.rut = rut;
     }
 
-    public char getDv() {
+    public String getDv() {
         return dv;
     }
 
-    public void setDv(char dv) {
+    public void setDv(String dv) {
         this.dv = dv;
     }
 
