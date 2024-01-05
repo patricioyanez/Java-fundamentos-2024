@@ -51,8 +51,9 @@ public class Principal2 {
         Ejercicio:
         Crear 2 personas y solicitar los datos al usuario para 
         completar ambos objetos y mostrar todos los datos en la 
-        consola
+        consola.
         
+        tarea: leer ppt 1.1.1, 1.2.1 y 1.3.1
         */
     }
 }
