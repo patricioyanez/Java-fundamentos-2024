@@ -69,4 +69,10 @@ public class Cancion {
     
     
     // metodos personalizados
+
+    @Override
+    public String toString() {
+        return "Cancion{" + "nombre=" + nombre + ", album=" + album + ", artista=" + artista + ", genero=" + genero + ", duracion=" + duracion + '}';
+    }
+    
 }
