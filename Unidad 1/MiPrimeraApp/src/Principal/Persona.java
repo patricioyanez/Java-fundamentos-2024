@@ -112,5 +112,16 @@ public class Persona {
         return "Persona{" + "rut=" + rut + ", dv=" + dv + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", direccion=" + direccion + ", anioIngreso=" + anioIngreso + ", sueldo=" + sueldo + ", esChileno=" + esChileno + '}';
     }
     
+    public String imprimirDatos()
+    {
+        return "Rut         : " + rut + "-" + dv + 
+                "\nNombre       : " + nombre + 
+                "\nApellido     : " + apellido + 
+                "\nCorreo       : " + correo + 
+                "\nDirección    : " + direccion + 
+                "\nAño Ingreso  : " + anioIngreso + 
+                "\nSueldo       : " + sueldo + 
+                "\nEs Chileno   : " + esChileno;
+    }
     
 }

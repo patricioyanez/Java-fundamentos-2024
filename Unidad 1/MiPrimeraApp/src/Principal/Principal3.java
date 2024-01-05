@@ -46,5 +46,9 @@ public class Principal3 {
         
         System.out.println("Datos Ingresados");
         System.out.println(persona1);
+        
+        System.out.println("Rut         : " + persona1.getRut() +"-" + persona1.getDv() );
+        System.out.println("Nombre      : " + persona1.getNombre());
+        System.out.println("Apellido    : " + persona1.getApellido());
     }
 }
