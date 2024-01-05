@@ -43,5 +43,8 @@ public class Principal3 {
         System.out.print("Es Chileno true/false : ");
         boolean esChileno = leer.nextBoolean();
         persona1.setEsChileno(esChileno);
+        
+        System.out.println("Datos Ingresados");
+        System.out.println(persona1);
     }
 }
