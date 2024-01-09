@@ -37,5 +37,20 @@ public class Principal {
             agregar 10 numeros a la coleccion numeros y mostrar
             en la pantalla
         */
+        numeros.add(20);
+        numeros.add(30);
+        numeros.add(200);
+        numeros.add(50);
+        numeros.add(120);
+        numeros.add(205);
+        numeros.add(1220);
+        numeros.add(31);
+        numeros.add(1);
+        numeros.add(-80);
+        
+        for (Integer numero : numeros) {
+            System.out.println("Numeros: " + numero);
+        }
+        
     }
 }
