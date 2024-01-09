@@ -31,5 +31,11 @@ public class Principal {
         for (String nombre : nombres) {
             System.out.println("Nombre for: " + nombre);
         }
+        
+        // ejercicio:
+        /*
+            agregar 10 numeros a la coleccion numeros y mostrar
+            en la pantalla
+        */
     }
 }
