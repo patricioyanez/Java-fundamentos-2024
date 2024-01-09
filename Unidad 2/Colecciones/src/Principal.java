@@ -52,5 +52,25 @@ public class Principal {
             System.out.println("Numeros: " + numero);
         }
         
+        // otros metodos
+        
+        boolean existe = numeros.contains(201);
+        
+        if(existe)
+            System.out.println("El valor si existe");
+        else
+            System.out.println("El valor no existe");
+        
+        int indiceObjeto = nombres.indexOf("Pedro");
+        
+        System.out.println("El nombre está en el indice: " + indiceObjeto);
+        
+        // eliminar elemento
+        boolean fueEliminado = nombres.remove("Pedro");
+        
+        if(fueEliminado)
+            System.out.println("Pedro fue eliminado");
+        else
+            System.out.println("Pedro no se encontro");
     }
 }
