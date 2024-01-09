@@ -72,5 +72,29 @@ public class Principal {
             System.out.println("Pedro fue eliminado");
         else
             System.out.println("Pedro no se encontro");
+        
+        // mostrar la lista de nombres modificada
+        System.out.println("\n\n");
+        for (String nombre : nombres) {
+            System.out.println("Nombre: " + nombre);
+        }
+        
+        nombres.remove(2);
+        System.out.println("\n\n");
+        for (String nombre : nombres) {
+            System.out.println("Nombre: " + nombre);
+        }
+        
+        System.out.println("*** cantidad de elementos ****");
+        System.out.println("La cantidad de nombres:" + nombres.size());
+        System.out.println("La cantidad de numeros:" + numeros.size());
+        
+        /*
+        Ejercicios: crear retina que permita ingresar x nombres
+        y listarlos cuando el usuario lo determine.
+        crear un menu para ambas acciones
+        
+        */
+        */
     }
 }
