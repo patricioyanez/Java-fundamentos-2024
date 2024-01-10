@@ -6,7 +6,7 @@ public class Principal2 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         ArrayList<String> nombres = new ArrayList<String>();
-        String opcion = "s";
+        String opcion = "";
         // menu
         while(!opcion.equalsIgnoreCase("s"))
         {
@@ -23,6 +23,13 @@ public class Principal2 {
                 String nombre = leer.next();
                 nombres.add(nombre);
                 System.out.println("\n*****  nombre registrado  *****\n");
+            }
+            else if(opcion.equals("2"))
+            {
+                System.out.println("=== listado de nombres ingresados ===");
+                for (String nombre : nombres) {
+                    System.out.println("Nombre: " + nombre);
+                }
             }
         }
         
