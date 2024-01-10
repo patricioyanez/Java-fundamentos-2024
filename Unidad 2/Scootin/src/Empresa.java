@@ -9,6 +9,7 @@ public class Empresa {
     
     public boolean agregar(Empleado empleado)
     {
+        // validar que el rut no se repita
         return empleados.add(empleado);
     }
     
