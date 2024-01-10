@@ -19,7 +19,10 @@ public class Principal2 {
             
             if(opcion.equals("1"))
             {
-                
+                System.out.print("Ingrese nombre:");
+                String nombre = leer.next();
+                nombres.add(nombre);
+                System.out.println("\n*****  nombre registrado  *****\n");
             }
         }
         

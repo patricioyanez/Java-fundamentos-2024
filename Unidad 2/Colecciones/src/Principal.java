@@ -90,11 +90,13 @@ public class Principal {
         System.out.println("La cantidad de numeros:" + numeros.size());
         
         /*
-        Ejercicios: crear retina que permita ingresar x nombres
-        y listarlos cuando el usuario lo determine.
-        crear un menu para ambas acciones
-        
+            Ejercicios: crear rutina que permita ingresar x nombres
+            y listarlos cuando el usuario lo determine.
+            crear un menu para ambas acciones
+            Solución en principal2
         */
+        
+        
         
     }
 }
