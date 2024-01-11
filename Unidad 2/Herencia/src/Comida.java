@@ -41,9 +41,9 @@ public class Comida {
 
 
     public String imprimirDatos() {
-        return "Nombre      = " + nombre + 
-               "\nPrecio    = " + precio + 
-                "\nMarca    = " + marca;
+        return   "Nombre         = " + nombre + 
+               "\nPrecio         = " + precio + 
+                "\nMarca          = " + marca;
     }
     
     

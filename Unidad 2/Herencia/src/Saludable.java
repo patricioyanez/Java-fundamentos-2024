@@ -32,8 +32,8 @@ public class Saludable extends Comida
     }
 
     public String imprimirDatos() {
-        return super.imprimirDatos() +
-                "Fibra          = " + fibra + 
+        return super.imprimirDatos() +               
+              "\nFibra          = " + fibra + 
               "\nClasificación  = " + clasificacion;
     }
     
