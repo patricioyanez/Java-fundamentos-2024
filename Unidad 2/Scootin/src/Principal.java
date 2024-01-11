@@ -20,5 +20,6 @@ public class Principal {
         scootin.agregar(empleado4);
         
         scootin.listarEmpleados();
+        
     }
 }

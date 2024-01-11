@@ -10,6 +10,11 @@ public class Empresa {
     public boolean agregar(Empleado empleado)
     {
         // validar que el rut no se repita
+        for (Empleado empleadoAuxiliar : empleados) {
+            if(empleadoAuxiliar.getRut().equals(empleado.getRut()))
+                return false;
+        }
+        
         return empleados.add(empleado);
     }
     
