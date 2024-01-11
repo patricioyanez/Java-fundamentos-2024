@@ -36,6 +36,31 @@ public class Saludable extends Comida
               "\nFibra          = " + fibra + 
               "\nClasificación  = " + clasificacion;
     }
+
+    @Override /// sobre escritura
+    public void cocinar() {
+        if(this.clasificacion.equalsIgnoreCase("Fruta"))
+            System.out.println("No es necesario cocinar");
+        else if(this.clasificacion.equalsIgnoreCase("pescado"))
+            System.out.println("Cocinar al menos 5 minutos");
+        
+        
+        //"fasdfads".subst
+    }
+    
+    
+    // sobre carga
+    public void descuento()
+    {
+        double descuento = super.getPrecio() * .9;
+        System.out.println("El descuento es: " + descuento);
+    }
+    public void descuento(int cantidadDescuento)
+    {
+        double porcentaje = (super.getPrecio() * cantidadDescuento)/100;
+        double descuento = super.getPrecio() - porcentaje;
+        System.out.println("El descuento es: " + descuento);
+    }
     
     
     

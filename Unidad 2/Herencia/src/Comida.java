@@ -46,5 +46,9 @@ public class Comida {
                 "\nMarca          = " + marca;
     }
     
+    public void cocinar()
+    {
+        System.out.println("Cocinar por 5 minutos");
+    }
     
 }
