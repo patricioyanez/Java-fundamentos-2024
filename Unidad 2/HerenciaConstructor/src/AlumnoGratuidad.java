@@ -24,7 +24,7 @@ public class AlumnoGratuidad extends Alumno{
     @Override
     public String imprimir() {
         return super.imprimir() +
-                "\nFue beneficiado  = " + (this.fueBeneficiado?"si":"no");
+                "\nFue beneficiado   = " + (this.fueBeneficiado?"si":"no");
     }
     
     

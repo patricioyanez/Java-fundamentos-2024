@@ -44,9 +44,9 @@ public class Persona {
 
 
     public String imprimir() {
-        return "Rut         = " + rut + 
-               "\nNombre      =" + nombre + 
-                "\nApellido   =" + apellido;
+        return "Rut               = " + rut + 
+               "\nNombre            = " + nombre + 
+               "\nApellido          = " + apellido;
     }
     
     

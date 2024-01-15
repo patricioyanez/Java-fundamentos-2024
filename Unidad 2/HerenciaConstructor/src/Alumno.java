@@ -6,12 +6,14 @@ public class Alumno extends Persona{
     public Alumno() {
         this.carrera = "";
         this.anioIngreso = 0;
+        System.out.println("Constructor Alumno");
     }
     
     public Alumno(String carrera, int anioIngreso, String rut, String nombre, String apellido) {
         super(rut, nombre, apellido);
         this.carrera = carrera;
         this.anioIngreso = anioIngreso;
+        System.out.println("Constructor Alumno");
     }
 
     public int getAnioIngreso() {
@@ -33,8 +35,8 @@ public class Alumno extends Persona{
     @Override
     public String imprimir() {
         return super.imprimir() +
-               "\nCarrera       = " + this.carrera + 
-                "\nAño Ingreso  = " + this.getAnioIngreso();
+               "\nCarrera           = " + this.carrera + 
+               "\nAño Ingreso       = " + this.getAnioIngreso();
     }
     
     
