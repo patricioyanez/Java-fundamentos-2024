@@ -8,12 +8,14 @@ public class Persona {
         this.rut = "";
         this.nombre = "";
         this.apellido = "";
+        System.out.println("Constructor Persona");
     }
     
     public Persona(String rut, String nombre, String apellido) {
         this.rut = rut;
         this.nombre = nombre;
         this.apellido = apellido;
+        System.out.println("Constructor Persona");
     }
 
     public String getApellido() {
