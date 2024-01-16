@@ -18,5 +18,7 @@ public class Principal {
         int cobro = 10000;
         totalPago = cobro + (cobro * Operaciones.IVA / 100);
         System.out.println("TOtal " + totalPago);
+        
+        // leer ppt 2.3.1
     }
 }
