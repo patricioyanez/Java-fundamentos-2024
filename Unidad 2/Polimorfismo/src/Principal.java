@@ -27,5 +27,8 @@ public class Principal {
             a.mover();
         }
         
+        /* Ejercicio:
+            2.2.2 en github
+        */
     }
 }
