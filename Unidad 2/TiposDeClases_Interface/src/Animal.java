@@ -1,5 +1,5 @@
 
-public abstract class Animal { // abstractos - final
+public abstract class Animal implements Operaciones{ // abstractos - final
     // clase enfocada para la herencia
     // no se puede instanciar
     String nombre;
