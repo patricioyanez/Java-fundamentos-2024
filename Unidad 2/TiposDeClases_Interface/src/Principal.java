@@ -7,5 +7,11 @@ public class Principal {
         p.nombre = "Reineta";
         p.especie= "pez gris";
         p.mover();
+        
+        Calculadora c = new Calculadora();
+        c.numero1 = 10;
+        c.numero2 = 15;
+        c.sumar();
+        
     }
 }
