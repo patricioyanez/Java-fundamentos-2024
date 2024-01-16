@@ -13,5 +13,10 @@ public class Principal {
         c.numero2 = 15;
         c.sumar();
         
+        
+        double totalPago = 0;
+        int cobro = 10000;
+        totalPago = cobro + (cobro * Operaciones.IVA / 100);
+        System.out.println("TOtal " + totalPago);
     }
 }
