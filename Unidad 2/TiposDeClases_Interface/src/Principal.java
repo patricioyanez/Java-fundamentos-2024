@@ -20,5 +20,7 @@ public class Principal {
         System.out.println("TOtal " + totalPago);
         
         // leer ppt 2.3.1
+        
+        // XAMPP (php, mysql y apache)
     }
 }
