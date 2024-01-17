@@ -1,15 +1,16 @@
 
-public abstract class Usuario {
+public abstract class Usuario implements Operaciones {
     private String usuario;
     private String clave;
     private int tiempoConectado;
     private String nombreRecurso; // nombre de canción, pelicula, serie, etc.
-
+    private boolean like; 
     public Usuario() {
         this.usuario = "";
         this.clave = "";
         this.tiempoConectado = 0;
         this.nombreRecurso = "";
+        this.like = false;
     }
 
     public Usuario(String usuario, String clave, int tiempoConectado, String nombreRecurso) {
@@ -59,5 +60,12 @@ public abstract class Usuario {
                 "\nNombre Recurso    = " + nombreRecurso;
     }
     
-    
+    public void darLike()
+    {
+        this.like = true;
+    }
+    public void tiempoConectado(int minutos)
+    {
+        this.tiempoConectado = minutos;
+    }
 }
