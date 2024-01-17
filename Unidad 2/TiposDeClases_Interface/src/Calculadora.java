@@ -1,5 +1,5 @@
 
-public final class Calculadora{
+public final class Calculadora {
     // se puede instanciar
     // NO SE PUEDE HEREDAR
     String operacion;

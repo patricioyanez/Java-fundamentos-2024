@@ -19,4 +19,6 @@ public interface Operaciones {
     // perfiles de usuario tipos usurioa
     
     
+    
+    
 }

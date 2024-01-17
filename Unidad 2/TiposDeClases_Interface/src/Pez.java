@@ -1,5 +1,5 @@
 
-public class Pez extends Animal implements Operaciones{
+public class Pez extends Animal implements Operaciones {
     boolean esComestible;
     String especie;
 
