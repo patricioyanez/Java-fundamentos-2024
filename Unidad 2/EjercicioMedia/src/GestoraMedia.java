@@ -3,22 +3,37 @@ import java.util.ArrayList;
 
 
 public class GestoraMedia {
-    ArrayList<Usuario> lista = new ArrayList<Usuario>();
+    ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     
-    public boolean agregar()
+    public boolean agregar(Usuario usuario)
     {
-        return true;
+        for (Usuario aux : usuarios) {
+            if(aux.getUsuario().equals(usuario.getUsuario()))
+                return false;
+        }
+        
+        return usuarios.add(usuario);
     }
     public void listar()
     {
-
+        for (Usuario aux : usuarios) {
+            System.out.println(aux.imprimir());
+        }
     }
     public boolean buscarPorNombre(String nombreUsuario)
     {
-        return true;
+        for (Usuario aux : usuarios) {
+            if(aux.getUsuario().equalsIgnoreCase(nombreUsuario))
+                return true;
+        }
+        return false;
     }
     public boolean eliminar(String nombreUsuario)
     {
-        return true;
+        for (Usuario aux : usuarios) {
+            if(aux.getUsuario().equalsIgnoreCase(nombreUsuario))
+                return usuarios.remove(aux);
+        }
+        return false;
     }
 }
