@@ -9,5 +9,16 @@ public class GestoraMedia {
     {
         return true;
     }
-    
+    public void listar()
+    {
+
+    }
+    public boolean buscarPorNombre(String nombreUsuario)
+    {
+        return true;
+    }
+    public boolean eliminar(String nombreUsuario)
+    {
+        return true;
+    }
 }
