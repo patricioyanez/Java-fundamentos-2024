@@ -30,10 +30,10 @@ public class FrmMenu extends javax.swing.JFrame {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mnuPersona = new javax.swing.JMenuItem();
+        mnuSalir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        mnuSalir2 = new javax.swing.JMenuItem();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -43,18 +43,33 @@ public class FrmMenu extends javax.swing.JFrame {
 
         jMenu1.setText("Administración");
 
-        jMenuItem1.setText("Persona");
-        jMenu1.add(jMenuItem1);
+        mnuPersona.setText("Persona");
+        mnuPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuPersonaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuPersona);
 
-        jMenuItem2.setText("Salir");
-        jMenu1.add(jMenuItem2);
+        mnuSalir.setText("Salir");
+        mnuSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSalirActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuSalir);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Salir");
 
-        jMenuItem3.setText("Cerrar aplicación");
-        jMenu2.add(jMenuItem3);
+        mnuSalir2.setText("Cerrar aplicación");
+        mnuSalir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSalir2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mnuSalir2);
 
         jMenuBar1.add(jMenu2);
 
@@ -73,6 +88,22 @@ public class FrmMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mnuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();        
+    }//GEN-LAST:event_mnuSalirActionPerformed
+
+    private void mnuSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSalir2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose(); 
+    }//GEN-LAST:event_mnuSalir2ActionPerformed
+
+    private void mnuPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPersonaActionPerformed
+        // TODO add your handling code here:
+        FrmPersona f = new FrmPersona();
+        f.setVisible(true);
+    }//GEN-LAST:event_mnuPersonaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,8 +146,8 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem mnuPersona;
+    private javax.swing.JMenuItem mnuSalir;
+    private javax.swing.JMenuItem mnuSalir2;
     // End of variables declaration//GEN-END:variables
 }
