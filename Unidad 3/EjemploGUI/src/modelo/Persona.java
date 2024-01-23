@@ -7,6 +7,9 @@ public class Persona {
     private String nombre;
     private String apellido;
     private String estadoCivil;
+    private String direccion;
+    private String comuna;
+    private boolean esChileno;
 
     public Persona() {
         this.rut = 0;
@@ -14,13 +17,19 @@ public class Persona {
         this.nombre = "";
         this.apellido = "";
         this.estadoCivil = "";
+        this.direccion = "";
+        this.comuna = "";
+        this.esChileno = true;
     }
-    public Persona(int rut, String dv, String nombre, String apellido, String estadoCivil) {
+    public Persona(int rut, String dv, String nombre, String apellido, String estadoCivil, String direccion, String comuna, boolean esChileno) {
         this.rut = rut;
         this.dv = dv;
         this.nombre = nombre;
         this.apellido = apellido;
         this.estadoCivil = estadoCivil;
+        this.direccion = direccion;
+        this.comuna = comuna;
+        this.esChileno = esChileno;
     }
 
     public String getApellido() {
@@ -63,5 +72,34 @@ public class Persona {
     public void setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getComuna() {
+        return comuna;
+    }
+
+    public void setComuna(String comuna) {
+        this.comuna = comuna;
+    }
+
+    public boolean isEsChileno() {
+        return esChileno;
+    }
+
+    public void setEsChileno(boolean esChileno) {
+        this.esChileno = esChileno;
+    }
+
+    public String imprimir() {
+        return "Persona{" + "rut=" + rut + ", dv=" + dv + ", nombre=" + nombre + ", apellido=" + apellido + ", estadoCivil=" + estadoCivil + ", direccion=" + direccion + ", comuna=" + comuna + ", esChileno=" + esChileno + '}';
+    }
+    
     
 }
