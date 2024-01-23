@@ -36,10 +36,14 @@ public class FrmPersona extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         txtRut = new javax.swing.JTextField();
         txtDv = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
@@ -48,6 +52,8 @@ public class FrmPersona extends javax.swing.JFrame {
         rdoAUC = new javax.swing.JRadioButton();
         rdoSoltero = new javax.swing.JRadioButton();
         rdoDivorciado = new javax.swing.JRadioButton();
+        chkEsChileno = new javax.swing.JCheckBox();
+        cmbComuna = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -61,6 +67,12 @@ public class FrmPersona extends javax.swing.JFrame {
         jLabel4.setText("Apellido");
 
         jLabel5.setText("Estado civil");
+
+        jLabel6.setText("Nacionalidad");
+
+        jLabel7.setText("Dirección");
+
+        jLabel8.setText("Comuna");
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +110,10 @@ public class FrmPersona extends javax.swing.JFrame {
         grupoEstadoCivil.add(rdoDivorciado);
         rdoDivorciado.setText("Divorciado");
 
+        chkEsChileno.setText("Es Chileno");
+
+        cmbComuna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Maipú", "Cerrillos", "Estación Central", "Peñaflor", "Talagante", "El Bosque", "Lo Espejo", "San Bernardo", "San Ramón" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,18 +127,34 @@ public class FrmPersona extends javax.swing.JFrame {
                         .addComponent(btnAceptar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtApellido)
-                            .addComponent(txtNombre)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(52, 52, 52)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtApellido)
+                                    .addComponent(txtNombre)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(txtRut, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtDv, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cmbComuna, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(rdoCasado)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -133,13 +165,8 @@ public class FrmPersona extends javax.swing.JFrame {
                                         .addComponent(rdoSoltero)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(rdoDivorciado))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(txtRut, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtDv, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(chkEsChileno)
+                                    .addComponent(txtDireccion))))
                         .addGap(14, 14, 14)))
                 .addGap(42, 42, 42))
         );
@@ -149,24 +176,20 @@ public class FrmPersona extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
                 .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel3)
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(46, 46, 46))
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(36, 36, 36)
+                    .addComponent(jLabel4)
+                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdoCasado)
                     .addComponent(rdoViudo)
@@ -174,7 +197,19 @@ public class FrmPersona extends javax.swing.JFrame {
                     .addComponent(rdoAUC)
                     .addComponent(rdoSoltero)
                     .addComponent(rdoDivorciado))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkEsChileno)
+                    .addComponent(jLabel6))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbComuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar)
                     .addComponent(btnCerrar)
@@ -230,6 +265,21 @@ public class FrmPersona extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Falta el apellido");
             txtApellido.requestFocus();
         }
+        else if(grupoEstadoCivil.getSelection() == null)
+        {
+            JOptionPane.showMessageDialog(this, "Falta el estado civil");
+            ///txtApellido.requestFocus();
+        }
+        else if(txtDireccion.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta la dirección");
+            txtDireccion.requestFocus();
+        }
+        else if(cmbComuna.getSelectedIndex() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta la Comuna");
+            cmbComuna.requestFocus();
+        }
         else
         {
             Persona persona = new Persona();
@@ -240,6 +290,26 @@ public class FrmPersona extends javax.swing.JFrame {
             persona.setNombre(txtNombre.getText().toUpperCase());
             persona.setApellido(txtApellido.getText().toUpperCase());
             
+            if(rdoAUC.isSelected())
+                persona.setEstadoCivil("AUC");
+            else if(rdoCasado.isSelected())
+                persona.setEstadoCivil("Casado");
+            else if(rdoDivorciado.isSelected())
+                persona.setEstadoCivil("Divorciado");
+            else if(rdoSoltero.isSelected())
+                persona.setEstadoCivil("Soltero");
+            else if(rdoViudo.isSelected())
+                persona.setEstadoCivil("Viudo");
+            
+            persona.setEsChileno(chkEsChileno.isSelected());
+            
+            
+            persona.setDireccion(txtDireccion.getText().toUpperCase());
+            
+            persona.setComuna(cmbComuna.getSelectedItem().toString());
+            
+            
+            JOptionPane.showMessageDialog(this, persona.imprimir());
             
         }
         
@@ -287,18 +357,24 @@ public class FrmPersona extends javax.swing.JFrame {
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JCheckBox chkEsChileno;
+    private javax.swing.JComboBox<String> cmbComuna;
     private javax.swing.ButtonGroup grupoEstadoCivil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JRadioButton rdoAUC;
     private javax.swing.JRadioButton rdoCasado;
     private javax.swing.JRadioButton rdoDivorciado;
     private javax.swing.JRadioButton rdoSoltero;
     private javax.swing.JRadioButton rdoViudo;
     private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtDv;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtRut;
