@@ -234,7 +234,15 @@ public class FrmPersona extends javax.swing.JFrame {
         txtApellido.setText("");
         grupoEstadoCivil.clearSelection();
         
+        chkEsChileno.setSelected(false);
+        txtDireccion.setText("");
+        
+        cmbComuna.setSelectedIndex(0);
+        
         txtRut.requestFocus();
+              
+        
+        
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
@@ -243,6 +251,10 @@ public class FrmPersona extends javax.swing.JFrame {
         // validar la información
         // campos vacios, cantidad de caracteres, formato, que caracteres se uso
         // exite ya en bdd
+        
+        
+        // Ejercicios: Validar que el rut tenga 8 digitos como maximo y
+        // el dv sea 1 solo
         
         if(txtRut.getText().trim().length() == 0)
         {
