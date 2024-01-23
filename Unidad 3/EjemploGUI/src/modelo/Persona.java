@@ -6,18 +6,21 @@ public class Persona {
     private String dv;
     private String nombre;
     private String apellido;
+    private String estadoCivil;
 
     public Persona() {
         this.rut = 0;
         this.dv = "";
         this.nombre = "";
         this.apellido = "";
+        this.estadoCivil = "";
     }
-    public Persona(int rut, String dv, String nombre, String apellido) {
+    public Persona(int rut, String dv, String nombre, String apellido, String estadoCivil) {
         this.rut = rut;
         this.dv = dv;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.estadoCivil = estadoCivil;
     }
 
     public String getApellido() {
@@ -52,5 +55,13 @@ public class Persona {
         this.nombre = nombre;
     }
     
+    
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
     
 }

@@ -5,6 +5,9 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
+import modelo.Persona;
+
 /**
  *
  * @author patri
@@ -59,15 +62,19 @@ public class FrmPersona extends javax.swing.JFrame {
 
         jLabel5.setText("Estado civil");
 
-        txtApellido.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidoActionPerformed(evt);
+                btnLimpiarActionPerformed(evt);
             }
         });
 
-        btnLimpiar.setText("Limpiar");
-
         btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -178,14 +185,68 @@ public class FrmPersona extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidoActionPerformed
-
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        
+        txtRut.setText("");
+        txtDv.setText("");
+        txtNombre.setText("");
+        txtApellido.setText("");
+        grupoEstadoCivil.clearSelection();
+        
+        txtRut.requestFocus();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        // TODO add your handling code here:
+        
+        // validar la información
+        // campos vacios, cantidad de caracteres, formato, que caracteres se uso
+        // exite ya en bdd
+        
+        if(txtRut.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Rut");
+            txtRut.requestFocus();
+        }
+        else if(txtDv.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Dígito");
+            txtDv.requestFocus();
+        }
+        else if(txtNombre.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta el nombre");
+            txtNombre.requestFocus();
+        }
+        
+        else if(txtApellido.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta el apellido");
+            txtApellido.requestFocus();
+        }
+        else
+        {
+            Persona persona = new Persona();
+            int aux = Integer.parseInt(txtRut.getText());            
+            persona.setRut(aux);
+            
+            persona.setDv(txtDv.getText().toUpperCase());
+            persona.setNombre(txtNombre.getText().toUpperCase());
+            persona.setApellido(txtApellido.getText().toUpperCase());
+            
+            
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
      * @param args the command line arguments
