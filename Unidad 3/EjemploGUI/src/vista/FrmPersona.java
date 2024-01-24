@@ -256,14 +256,33 @@ public class FrmPersona extends javax.swing.JFrame {
         // Ejercicios: Validar que el rut tenga 8 digitos como maximo y
         // el dv sea 1 solo
         
+        
+        // Tarea: validar si el rut esta correcto
+        // agregar correo al modelo y al formulario validar el formato
+        
         if(txtRut.getText().trim().length() == 0)
         {
             JOptionPane.showMessageDialog(this, "Falta Rut");
             txtRut.requestFocus();
         }
+        else if(txtRut.getText().trim().length() > 8)
+        {
+            JOptionPane.showMessageDialog(this, "Ha excedido la cantidad de dígitos");
+            txtRut.requestFocus();
+        }
+        else if(txtRut.getText().trim().length() < 6)
+        {
+            JOptionPane.showMessageDialog(this, "Debe agregar al menos 6 dígitos");
+            txtRut.requestFocus();
+        }
         else if(txtDv.getText().trim().length() == 0)
         {
             JOptionPane.showMessageDialog(this, "Falta Dígito");
+            txtDv.requestFocus();
+        }
+        else if(txtDv.getText().trim().length() != 1)
+        {
+            JOptionPane.showMessageDialog(this, "Ha excedido la cantidad de dígitos");
             txtDv.requestFocus();
         }
         else if(txtNombre.getText().trim().length() == 0)
