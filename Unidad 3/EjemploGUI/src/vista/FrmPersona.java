@@ -318,6 +318,17 @@ public class FrmPersona extends javax.swing.JFrame {
             persona.setRut(aux);
             
             persona.setDv(txtDv.getText().toUpperCase());
+            
+            /*
+                agregar validación del rut
+            */       
+            if(!persona.validarRut())
+            {
+                JOptionPane.showMessageDialog(this, "El rut no es válido.");
+                txtRut.requestFocus(); 
+                return;
+            }
+            
             persona.setNombre(txtNombre.getText().toUpperCase());
             persona.setApellido(txtApellido.getText().toUpperCase());
             

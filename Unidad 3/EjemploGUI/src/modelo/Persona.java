@@ -101,5 +101,33 @@ public class Persona {
         return "Persona{" + "rut=" + rut + ", dv=" + dv + ", nombre=" + nombre + ", apellido=" + apellido + ", estadoCivil=" + estadoCivil + ", direccion=" + direccion + ", comuna=" + comuna + ", esChileno=" + esChileno + '}';
     }
     
+    public boolean validarRut() {
+        int suma = 0;
+        int multiplicador = 2;
+        String rutAux = "" + this.rut;
+        // Recorrer el cuerpo del RUT de derecha a izquierda
+        for (int i = rutAux.length() - 1; i >= 0; i--) {
+            int digito = Character.getNumericValue(rutAux.charAt(i));
+            suma += digito * multiplicador;
+
+            multiplicador = multiplicador == 7 ? 2 : multiplicador + 1;
+        }
+
+        // Calcular el dígito verificador
+        int resto = suma % 11;
+        int resultado = 11 - resto;
+        
+        if(resultado == 11 && this.dv.equals("0") )
+            return true;
+        else if(resultado == 10 && this.dv.toUpperCase().equals("K"))
+            return true;
+        else if (resultado > 0 && resultado < 10)
+        {
+            int digito = Integer.parseInt(this.dv);
+            if(resultado ==  digito)
+                return true;            
+        }
+        return false;
+    }
     
 }
