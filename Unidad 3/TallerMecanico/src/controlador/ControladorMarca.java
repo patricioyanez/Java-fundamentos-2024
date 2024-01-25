@@ -18,8 +18,8 @@ public class ControladorMarca {
 
             PreparedStatement st;
             st = cx.prepareStatement(sql);
-            st.setString(0, marca.getNombre());
-            st.setInt(1, (marca.isHabilitado()?1:0));
+            st.setString(1, marca.getNombre());
+            st.setInt(2, (marca.isHabilitado()?1:0));
             st.executeUpdate();
             st.close();
             cx.close();
@@ -41,9 +41,9 @@ public class ControladorMarca {
 
             PreparedStatement st;
             st = cx.prepareStatement(sql);
-            st.setString(0, marca.getNombre());
-            st.setInt(1, (marca.isHabilitado()?1:0));
-            st.setInt(2, marca.getId());
+            st.setString(1, marca.getNombre());
+            st.setInt(2, (marca.isHabilitado()?1:0));
+            st.setInt(3, marca.getId());
             st.executeUpdate();
             st.close();
             cx.close();
@@ -65,7 +65,7 @@ public class ControladorMarca {
 
             PreparedStatement st;
             st = cx.prepareStatement(sql);
-            st.setInt(0, id);            
+            st.setInt(1, id);            
 
             st.executeUpdate();
             st.close();
@@ -78,7 +78,6 @@ public class ControladorMarca {
         }
         return false;     
     }
-    
     public Marca buscarPorId(int id)
     {
        try
@@ -89,7 +88,7 @@ public class ControladorMarca {
 
             PreparedStatement st;
             st = cx.prepareStatement(sql);
-            st.setInt(0, id);
+            st.setInt(1, id);
             
             ResultSet rs = st.executeQuery();
             

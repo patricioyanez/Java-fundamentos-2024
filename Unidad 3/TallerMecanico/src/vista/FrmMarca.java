@@ -1,4 +1,5 @@
 package vista;
+import controlador.ControladorMarca;
 import javax.swing.JOptionPane;
 import modelo.Marca;
 
@@ -169,6 +170,8 @@ public class FrmMarca extends javax.swing.JFrame {
         txtId.setText("");
         txtNombre.setText("");
         chkHabilitado.setSelected(false);
+        
+        marca.limpiar();
         txtNombre.requestFocus();
         
     }//GEN-LAST:event_btnLimpiarActionPerformed
@@ -191,7 +194,16 @@ public class FrmMarca extends javax.swing.JFrame {
         marca.setNombre(txtNombre.getText().toUpperCase());
         marca.setHabilitado(chkHabilitado.isSelected());
         
+        ControladorMarca cm = new ControladorMarca();
+        boolean resultado = cm.agregar(marca);
         
+        if(resultado)
+        {
+            JOptionPane.showMessageDialog(this, "Datos guardados");
+            btnLimpiarActionPerformed(null);
+        }
+        else
+            JOptionPane.showMessageDialog(this, "Datos NO guardados");
         
     }//GEN-LAST:event_btnGuardarActionPerformed
 
