@@ -1,4 +1,5 @@
 package vista;
+import javax.swing.JOptionPane;
 import modelo.Marca;
 
 
@@ -174,10 +175,24 @@ public class FrmMarca extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        
-        
+       
         // tarea: validar los campos y traspasar al 
         // objeto los valores del fomulario
+        
+        
+        if(txtNombre.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta nombre.");
+            txtNombre.requestFocus();
+            return;
+        }
+        
+        // objeto marca esta creado como atributo del formulario
+        marca.setNombre(txtNombre.getText().toUpperCase());
+        marca.setHabilitado(chkHabilitado.isSelected());
+        
+        
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
