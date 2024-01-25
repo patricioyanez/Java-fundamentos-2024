@@ -37,7 +37,7 @@ public class ControladorMarca {
         {
             Conexion conexion = new Conexion();
             Connection cx = conexion.obtenerConexion();
-            String sql = "UPDATE SET MARCA NOMBRE = ?, HABILITADO = ? WHERE ID = ?";
+            String sql = "UPDATE MARCA SET NOMBRE = ?, HABILITADO = ? WHERE ID = ?";
 
             PreparedStatement st;
             st = cx.prepareStatement(sql);
@@ -98,6 +98,7 @@ public class ControladorMarca {
                 marca.setId(rs.getInt("id"));
                 marca.setNombre(rs.getString("nombre"));
                 marca.setHabilitado(rs.getInt("habilitado")==1 ? true: false);
+                return marca;
             }
             
             st.close();

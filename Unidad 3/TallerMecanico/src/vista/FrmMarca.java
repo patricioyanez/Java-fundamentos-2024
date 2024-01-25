@@ -64,12 +64,27 @@ public class FrmMarca extends javax.swing.JFrame {
         });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnListar.setText("Listar");
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -206,6 +221,84 @@ public class FrmMarca extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Datos NO guardados");
         
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+        if(txtId.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta el id.");
+            txtId.requestFocus();
+            return;
+        }
+        if(txtNombre.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta nombre.");
+            txtNombre.requestFocus();
+            return;
+        }
+        
+        // objeto marca esta creado como atributo del formulario
+        int id = Integer.parseInt(txtId.getText());
+        marca.setId(id);
+        marca.setNombre(txtNombre.getText().toUpperCase());
+        marca.setHabilitado(chkHabilitado.isSelected());
+        
+        ControladorMarca cm = new ControladorMarca();
+        boolean resultado = cm.modificar(marca);
+        
+        if(resultado)
+        {
+            JOptionPane.showMessageDialog(this, "Datos guardados");
+            btnLimpiarActionPerformed(null);
+        }
+        else
+            JOptionPane.showMessageDialog(this, "Datos NO guardados");
+        
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        if(txtId.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta el id.");
+            txtId.requestFocus();
+            return;
+        }
+         int id = Integer.parseInt(txtId.getText());
+        ControladorMarca cm = new ControladorMarca();
+        boolean resultado = cm.eliminar(id);
+        
+        if(resultado)
+        {
+            JOptionPane.showMessageDialog(this, "Datos eliminados");
+            btnLimpiarActionPerformed(null);
+        }
+        else
+            JOptionPane.showMessageDialog(this, "Datos NO eliminados");
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        if(txtId.getText().trim().length() == 0)
+        {
+            JOptionPane.showMessageDialog(this, "Falta el id.");
+            txtId.requestFocus();
+            return;
+        }
+        int id = Integer.parseInt(txtId.getText());
+        ControladorMarca cm = new ControladorMarca();
+        marca = cm.buscarPorId(id);
+        
+        if(marca == null)
+        {
+            JOptionPane.showMessageDialog(this, "No existe el id");
+            txtId.requestFocus();
+            return; 
+        }
+        txtNombre.setText(marca.getNombre());
+        chkHabilitado.setSelected(marca.isHabilitado());
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
