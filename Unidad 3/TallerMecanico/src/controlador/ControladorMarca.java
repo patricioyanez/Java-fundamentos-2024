@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import modelo.Marca;
 
 
@@ -54,6 +55,30 @@ public class ControladorMarca {
         }
         return false;
     }
+    public boolean eliminar(int id)
+    {
+       try
+        {
+            Conexion conexion = new Conexion();
+            Connection cx = conexion.obtenerConexion();
+            String sql = "DELETE FROM MARCA WHERE ID = ?";
+
+            PreparedStatement st;
+            st = cx.prepareStatement(sql);
+            st.setInt(0, id);            
+
+            st.executeUpdate();
+            st.close();
+            cx.close();
+            return true;
+        }
+        catch(SQLException ex)
+        {
+            System.out.println("ERROR:" + ex.getMessage());
+        }
+        return false;     
+    }
+    
     public Marca buscarPorId(int id)
     {
        try
@@ -86,28 +111,33 @@ public class ControladorMarca {
         }
         return null; 
     }
-    
-    public boolean eliminar(int id)
+    public ArrayList<Marca> buscarTodo()
     {
-       try
+        ArrayList<Marca> listado = new ArrayList<Marca>();
+        try
         {
             Conexion conexion = new Conexion();
             Connection cx = conexion.obtenerConexion();
-            String sql = "DELETE FROM MARCA WHERE ID = ?";
+            String sql = "SELECT id, nombre, habilitado FROM marca";
 
             PreparedStatement st;
-            st = cx.prepareStatement(sql);
-            st.setInt(0, id);            
-
-            st.executeUpdate();
+            st = cx.prepareStatement(sql);           
+            ResultSet rs = st.executeQuery();
+            while(rs.next())
+            {
+                Marca marca = new Marca();
+                marca.setId(rs.getInt("id"));
+                marca.setNombre(rs.getString("nombre"));
+                marca.setHabilitado(rs.getInt("habilitado")==1 ? true: false);
+                listado.add(marca);
+            }            
             st.close();
             cx.close();
-            return true;
         }
         catch(SQLException ex)
         {
             System.out.println("ERROR:" + ex.getMessage());
         }
-        return false;     
+        return listado;
     }
 }
