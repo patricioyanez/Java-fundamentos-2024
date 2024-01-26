@@ -1,18 +1,18 @@
 package vista;
-import controlador.ControladorMarca;
+import controlador.ControladorCargo;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import modelo.Marca;
+import modelo.Cargo;
 
 
-public class FrmMarca extends javax.swing.JFrame {
+public class FrmCargo extends javax.swing.JFrame {
     
-    private Marca marca= new Marca();
+    private Cargo cargo= new Cargo();
     /**
-     * Creates new form FrmMarca
+     * Creates new form FrmCargo
      */
-    public FrmMarca() {
+    public FrmCargo() {
         initComponents();
     }
 
@@ -30,7 +30,6 @@ public class FrmMarca extends javax.swing.JFrame {
         txtId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
-        chkHabilitado = new javax.swing.JCheckBox();
         btnLimpiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -41,16 +40,14 @@ public class FrmMarca extends javax.swing.JFrame {
         tabla = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Adminitración de marcas");
+        setTitle("Administración de cargos");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Marcas");
+        jLabel1.setText("Cargo");
 
         jLabel2.setText("Id");
 
         jLabel3.setText("Nombre");
-
-        chkHabilitado.setText("Habilitado");
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -131,9 +128,6 @@ public class FrmMarca extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -143,7 +137,6 @@ public class FrmMarca extends javax.swing.JFrame {
                                 .addGap(60, 60, 60)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(chkHabilitado, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,15 +152,18 @@ public class FrmMarca extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnModificar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnListar)))))
+                                .addComponent(btnListar))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,9 +172,7 @@ public class FrmMarca extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(chkHabilitado)
-                .addGap(35, 35, 35)
+                .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar)
                     .addComponent(btnGuardar)
@@ -197,9 +191,9 @@ public class FrmMarca extends javax.swing.JFrame {
         // TODO add your handling code here:
         txtId.setText("");
         txtNombre.setText("");
-        chkHabilitado.setSelected(false);
+
         
-        marca.limpiar();
+        cargo.limpiar();
         txtNombre.requestFocus();
         
     }//GEN-LAST:event_btnLimpiarActionPerformed
@@ -218,12 +212,12 @@ public class FrmMarca extends javax.swing.JFrame {
             return;
         }
         
-        // objeto marca esta creado como atributo del formulario
-        marca.setNombre(txtNombre.getText().toUpperCase());
-        marca.setHabilitado(chkHabilitado.isSelected());
+        // objeto cargo esta creado como atributo del formulario
+        cargo.setNombre(txtNombre.getText().toUpperCase());
+
         
-        ControladorMarca cm = new ControladorMarca();
-        boolean resultado = cm.agregar(marca);
+        ControladorCargo cm = new ControladorCargo();
+        boolean resultado = cm.agregar(cargo);
         
         if(resultado)
         {
@@ -251,14 +245,13 @@ public class FrmMarca extends javax.swing.JFrame {
             return;
         }
         
-        // objeto marca esta creado como atributo del formulario
+        // objeto cargo esta creado como atributo del formulario
         int id = Integer.parseInt(txtId.getText());
-        marca.setId(id);
-        marca.setNombre(txtNombre.getText().toUpperCase());
-        marca.setHabilitado(chkHabilitado.isSelected());
+        cargo.setId(id);
+        cargo.setNombre(txtNombre.getText().toUpperCase());
         
-        ControladorMarca cm = new ControladorMarca();
-        boolean resultado = cm.modificar(marca);
+        ControladorCargo cm = new ControladorCargo();
+        boolean resultado = cm.modificar(cargo);
         
         if(resultado)
         {
@@ -280,7 +273,7 @@ public class FrmMarca extends javax.swing.JFrame {
             return;
         }
          int id = Integer.parseInt(txtId.getText());
-        ControladorMarca cm = new ControladorMarca();
+        ControladorCargo cm = new ControladorCargo();
         boolean resultado = cm.eliminar(id);
         
         if(resultado)
@@ -303,29 +296,28 @@ public class FrmMarca extends javax.swing.JFrame {
             return;
         }
         int id = Integer.parseInt(txtId.getText());
-        ControladorMarca cm = new ControladorMarca();
-        marca = cm.buscarPorId(id);
+        ControladorCargo cm = new ControladorCargo();
+        cargo = cm.buscarPorId(id);
         
-        if(marca == null)
+        if(cargo == null)
         {
             JOptionPane.showMessageDialog(this, "No existe el id");
             txtId.requestFocus();
             return; 
         }
-        txtNombre.setText(marca.getNombre());
-        chkHabilitado.setSelected(marca.isHabilitado());
+        txtNombre.setText(cargo.getNombre());
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         // TODO add your handling code here:
-        ControladorMarca cm = new ControladorMarca();
-        ArrayList<Marca> listado = cm.buscarTodo();
+        ControladorCargo cm = new ControladorCargo();
+        ArrayList<Cargo> listado = cm.buscarTodo();
         
         DefaultTableModel dtm = (DefaultTableModel) tabla.getModel();
         dtm.setRowCount(0);
         
-        for (Marca aux : listado)
-            dtm.addRow(new Object[]{aux.getId(), aux.getNombre(), aux.isHabilitado()});
+        for (Cargo aux : listado)
+            dtm.addRow(new Object[]{aux.getId(), aux.getNombre()});
 
     }//GEN-LAST:event_btnListarActionPerformed
 
@@ -337,7 +329,7 @@ public class FrmMarca extends javax.swing.JFrame {
         txtNombre.setText(tabla.getValueAt(fila, 1).toString());
         
         boolean estado = tabla.getValueAt(fila, 2).toString().equals("true");
-        chkHabilitado.setSelected(estado);
+
     }//GEN-LAST:event_tablaMouseClicked
 
     /**
@@ -357,20 +349,21 @@ public class FrmMarca extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCargo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCargo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCargo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCargo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMarca().setVisible(true);
+                new FrmCargo().setVisible(true);
             }
         });
     }
@@ -382,7 +375,6 @@ public class FrmMarca extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnListar;
     private javax.swing.JButton btnModificar;
-    private javax.swing.JCheckBox chkHabilitado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
