@@ -36,12 +36,12 @@ public class ControladorCargo {
         {
             Conexion conexion = new Conexion();
             Connection cx = conexion.obtenerConexion();
-            String sql = "UPDATE CARGO SET NOMBRE = ? WHERE ID = ?";
+            String sql = "UPDATE CARGO SET NOMBRE = ? WHERE IDCARGO = ?";
 
             PreparedStatement st;
             st = cx.prepareStatement(sql);
             st.setString(1, cargo.getNombre());
-            st.setInt(3, cargo.getId());
+            st.setInt(2, cargo.getId());
             st.executeUpdate();
             st.close();
             cx.close();
@@ -59,7 +59,7 @@ public class ControladorCargo {
         {
             Conexion conexion = new Conexion();
             Connection cx = conexion.obtenerConexion();
-            String sql = "DELETE FROM CARGO WHERE ID = ?";
+            String sql = "DELETE FROM CARGO WHERE IDCARGO = ?";
 
             PreparedStatement st;
             st = cx.prepareStatement(sql);
@@ -82,7 +82,7 @@ public class ControladorCargo {
         {
             Conexion conexion = new Conexion();
             Connection cx = conexion.obtenerConexion();
-            String sql = "SELECT id, nombre FROM CARGO WHERE ID = ?";
+            String sql = "SELECT idCargo, nombre FROM CARGO WHERE IDCARGO = ?";
 
             PreparedStatement st;
             st = cx.prepareStatement(sql);
@@ -93,7 +93,7 @@ public class ControladorCargo {
             if(rs.next())
             {
                 Cargo cargo = new Cargo();
-                cargo.setId(rs.getInt("id"));
+                cargo.setId(rs.getInt("idCargo"));
                 cargo.setNombre(rs.getString("nombre"));
                 return cargo;
             }
@@ -115,7 +115,7 @@ public class ControladorCargo {
         {
             Conexion conexion = new Conexion();
             Connection cx = conexion.obtenerConexion();
-            String sql = "SELECT id, nombre FROM cargo";
+            String sql = "SELECT idCargo, nombre FROM cargo";
 
             PreparedStatement st;
             st = cx.prepareStatement(sql);           
@@ -123,7 +123,7 @@ public class ControladorCargo {
             while(rs.next())
             {
                 Cargo cargo = new Cargo();
-                cargo.setId(rs.getInt("id"));
+                cargo.setId(rs.getInt("idCargo"));
                 cargo.setNombre(rs.getString("nombre"));
                 listado.add(cargo);
             }            

@@ -96,14 +96,14 @@ public class FrmCargo extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Nombre", "Habilitado"
+                "Id", "Nombre"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -328,8 +328,6 @@ public class FrmCargo extends javax.swing.JFrame {
         txtId.setText(tabla.getValueAt(fila, 0).toString());
         txtNombre.setText(tabla.getValueAt(fila, 1).toString());
         
-        boolean estado = tabla.getValueAt(fila, 2).toString().equals("true");
-
     }//GEN-LAST:event_tablaMouseClicked
 
     /**
