@@ -1,6 +1,8 @@
 package vista;
 import controlador.ControladorMarca;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import modelo.Marca;
 
 
@@ -78,6 +80,11 @@ public class FrmMarca extends javax.swing.JFrame {
         });
 
         btnListar.setText("Listar");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarActionPerformed(evt);
+            }
+        });
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +114,11 @@ public class FrmMarca extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tabla);
@@ -216,6 +228,7 @@ public class FrmMarca extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Datos guardados");
             btnLimpiarActionPerformed(null);
+            btnListarActionPerformed(null);
         }
         else
             JOptionPane.showMessageDialog(this, "Datos NO guardados");
@@ -250,6 +263,7 @@ public class FrmMarca extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Datos guardados");
             btnLimpiarActionPerformed(null);
+            btnListarActionPerformed(null);
         }
         else
             JOptionPane.showMessageDialog(this, "Datos NO guardados");
@@ -272,6 +286,7 @@ public class FrmMarca extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this, "Datos eliminados");
             btnLimpiarActionPerformed(null);
+            btnListarActionPerformed(null);
         }
         else
             JOptionPane.showMessageDialog(this, "Datos NO eliminados");
@@ -299,6 +314,30 @@ public class FrmMarca extends javax.swing.JFrame {
         txtNombre.setText(marca.getNombre());
         chkHabilitado.setSelected(marca.isHabilitado());
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+        // TODO add your handling code here:
+        ControladorMarca cm = new ControladorMarca();
+        ArrayList<Marca> listado = cm.buscarTodo();
+        
+        DefaultTableModel dtm = (DefaultTableModel) tabla.getModel();
+        dtm.setRowCount(0);
+        
+        for (Marca aux : listado)
+            dtm.addRow(new Object[]{aux.getId(), aux.getNombre(), aux.isHabilitado()});
+
+    }//GEN-LAST:event_btnListarActionPerformed
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+        // TODO add your handling code here:
+        int fila = tabla.getSelectedRow();
+        
+        txtId.setText(tabla.getValueAt(fila, 0).toString());
+        txtNombre.setText(tabla.getValueAt(fila, 1).toString());
+        
+        boolean estado = tabla.getValueAt(fila, 2).toString().equals("true");
+        chkHabilitado.setSelected(estado);
+    }//GEN-LAST:event_tablaMouseClicked
 
     /**
      * @param args the command line arguments
